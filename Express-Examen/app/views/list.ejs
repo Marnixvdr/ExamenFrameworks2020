@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
+    <link rel='stylesheet' href='stylesheets/bootstrap.min.css'>
+</head>
+<body>
+    <h1>All students</h1>
+<br/><br/>
+
+<form action="/students/add" method="post">
+    name:<br />
+    <input type="text" name="naam" /><br />
+    geboortedatum:<br />
+    <input type="text" name="brand" /><br />
+    studierichting:<br />
+    <input type="text" name="description" /><br />
+
+    <input type="submit" value="Toevoegen" />
+  </form>
+
+
+<ul class='student'>
+    <% students.forEach(function(student) {%>
+    <li class='student'>
+        <span><b>naam : </b><%= student.naam %></span> <br/>
+        <span><b>geboortedatum : </b><%= student.geboortedatum %></span> <br/>
+        <span><b>studierichting : </b><%= student.studierichting %></span> <br/>
+    </li>
+    <% }) %>
+
+</ul>
+<br/>
+
+</body>
+</html>

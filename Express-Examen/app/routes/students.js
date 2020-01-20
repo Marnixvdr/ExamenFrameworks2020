@@ -13,13 +13,9 @@ MongoClient.connect(url, (err, database) => {
 router.get('/', (req, res) => {
     db.collection('students').find().toArray((err, result) => {
         if (err) return
-        res.render('list.ejs', { products: result})
+        res.render('list.ejs', { students: result})
     })
 });
-
-router.get('/search', (req,res) => {
-    res.render('search.ejs',{})
-})
 
 router.post('/add', (req,res) => {
     db.collection('students').insertOne(req.body, (err,result) => {
